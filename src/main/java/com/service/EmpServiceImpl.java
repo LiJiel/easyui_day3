@@ -49,5 +49,6 @@ public class EmpServiceImpl implements EmpService {
     public void update(Emp emp) {
         System.out.println("aaaaaaaaaa");
         empDao.update(emp);
+        System.out.println("bbbbbbbbbb");
     }
 }
