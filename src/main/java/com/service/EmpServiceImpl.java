@@ -47,6 +47,7 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public void update(Emp emp) {
+        System.out.println("aaaaaaaaaa");
         empDao.update(emp);
     }
 }
