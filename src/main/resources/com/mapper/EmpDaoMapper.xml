@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.EmpDao">
+
+    <insert id="save" parameterType="com.entity.Emp">
+      insert into t_emp values(#{id},#{name},#{age},#{bir},#{address});
+    </insert>
+
+    <select id="queryByPage" resultType="com.entity.Emp">
+      select id,name,age,bir,address from t_emp limit #{start},#{rows}
+    </select>
+
+    <select id="allTotals" resultType="long">
+        select count(id) from t_emp
+    </select>
+    <delete id="delete" parameterType="String">
+        delete from t_emp where id = #{id}
+    </delete>
+    <update id="update" parameterType="com.entity.Emp">
+        update t_emp set name=#{name},age=#{age},bir=#{bir},address=#{address} where id=#{id}
+    </update>
+    <select id="queryOne" parameterType="String" resultType="com.entity.Emp">
+        select id,name,age,bir,address from t_emp where id=#{id}
+    </select>
+</mapper>
